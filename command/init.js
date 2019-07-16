@@ -16,8 +16,8 @@ module.exports = () => {
         gitUrl = templateConfig.template[tplName].url
         let command = `git clone --bare ${gitUrl} ${projectName}`
         console.log(chalk.green('\n 项目生成中...'))
-        exec(command).then(stout => {
-            console.log(stout)
+        exec(command).then((...args) => {
+            console.log(`${chalk.green('clone 完成！(*^▽^*)')}`)
         }).catch(err => {
             console.log(err);
             
