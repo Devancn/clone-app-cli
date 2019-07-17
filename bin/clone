@@ -1,35 +1,43 @@
 #! /usr/bin/env node
-
 const program = require('commander')
-const { getPkgVersion } = require('../util')
-const add = require('../command/add')
-const list = require('../command/list')
-const init = require('../command/init')
-const remove = require('../command/remove')
-
-console.log(`❤  clone-app-cli v${getPkgVersion()}`)
-
-program.version(getPkgVersion()).usage('<command> [options]')
-
+const chalk = require('chalk')
+const { logo, version } = require('../util')
+const { add, list,init } = require('../command')
+program
+  .version(version(), '-v, --version')
+  .usage('<command> [options]')
 program
   .command('add')
-  .description('从git仓库克隆项目模板')
-  .action(add)
-
-program
-  .command('remove')
-  .option('--name')
-  .description('删除指定模版配置')
-  .action(remove)
+  .description('add a new template')
+  .action((...args) => {
+    add(...args)
+  })
 
 program
   .command('list')
-  .description('查看模版配置信息')
-  .action(list)
+  .description('view template name list')
+  .action((...args) => {
+    list(...args)
+  })
 
 program
   .command('init')
-  .description('根据模版名称初始化项目')
-  .action(init)
+  .description('initial project from template')
+  .action((...args) => {
+    init(...args)
+  })
 
+program
+  .arguments('<command>')
+  .action(name => {
+    program.outputHelp()
+    console.log()
+    console.log(`  ` + chalk.red(`Unknown command ${chalk.yellow(name)}.`))
+    console.log()
+  })
 program.parse(process.argv)
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp()
+  logo()
+}
