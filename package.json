@@ -1,6 +1,6 @@
 {
   "name": "clone-app",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "一个根据git仓库项目模板初始化项目的脚手架",
   "main": "index.js",
   "scripts": {
