@@ -16,7 +16,7 @@ module.exports = async () => {
         }
     } else {
         console.log()
-        console.log(chalk.blue('template list is empty'));
+        console.log(chalk.red('template list is empty'));
         console.log()
     }
 
