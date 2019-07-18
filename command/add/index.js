@@ -7,6 +7,6 @@ module.exports = async () => {
     let { remote } = await getRemote()
     await yaml.writeYaml(name, { name, remote })
     console.log()
-    console.log(chalk.green('template added successfull!'))
+    console.log(chalk.green('template added successfully!'))
     console.log()
 }

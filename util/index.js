@@ -2,6 +2,7 @@
 module.exports = {
     yaml: require('./ymal'),
     version: require('./version'),
-    logo: require('./logo')
+    logo: require('./logo'),
+    git: require('./git')
 };
 

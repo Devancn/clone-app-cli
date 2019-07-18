@@ -1,5 +1,6 @@
 module.exports = {
     add: require('./add'),
     list: require('./list'),
-    init: require('./init')
+    init: require('./init'),
+    remove: require('./remove')
 }

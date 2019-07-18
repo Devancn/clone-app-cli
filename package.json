@@ -31,6 +31,7 @@
     "fs-extra": "^8.1.0",
     "inquirer": "^6.5.0",
     "read-yaml": "^1.1.0",
+    "simple-git": "^1.121.0",
     "table": "^5.4.4",
     "write-yaml": "^1.0.0"
   },

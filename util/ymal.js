@@ -34,7 +34,6 @@ function removeYaml(name) {
     return fsExtra.unlinkSync(yamlPath(name))
 }
 
-
 module.exports = {
     yamlPath,
     isYamlExist,

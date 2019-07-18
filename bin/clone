@@ -2,7 +2,7 @@
 const program = require('commander')
 const chalk = require('chalk')
 const { logo, version } = require('../util')
-const { add, list,init } = require('../command')
+const { add, list, init, remove } = require('../command')
 program
   .version(version(), '-v, --version')
   .usage('<command> [options]')
@@ -25,6 +25,13 @@ program
   .description('initial project from template')
   .action((...args) => {
     init(...args)
+  })
+
+program
+  .command('remove')
+  .description('remove a template')
+  .action((...args) => {
+    remove(...args)
   })
 
 program
