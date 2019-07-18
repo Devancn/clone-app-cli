@@ -7,8 +7,7 @@ Clone a git repositort via shell command.
 ```sh
 $ yarn global add clone-app
 ```
-> or
-
+ or
 ```sh
 $ npm install -g clone-app
 ```
